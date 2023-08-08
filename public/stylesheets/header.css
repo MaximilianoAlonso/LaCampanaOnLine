@@ -1,0 +1,134 @@
+/* FIRST MOBILE */
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: #4f46e5;
+  -webkit-box-shadow: 0px 5px 6px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 5px 6px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 6px -1px rgba(0,0,0,0.75);
+}
+header .titleHeader{
+text-decoration: none;
+}
+/* TITLE */
+header h1 {
+  width: auto;
+  font-size: 27px;
+  padding: 10px;
+  align-self: center;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 8px 4px 0px rgba(251, 255, 11, 0.39);
+  
+}
+header h1 i{
+margin-right: 15px;
+align-self: center;
+font-size: 35px;
+  color: #f7f7f7;
+}
+
+/* BURGUER BARS*/
+.header_burger {
+  display: block;
+  text-align: right;
+  font-size: 35px;
+  padding: 6px 15px;
+  align-self: center;
+  width: auto;
+  color: #ffffff;
+}
+
+/* MENU */
+header ul {
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #4f46e5;
+  padding: 40px 20px 20px 20px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  transition: left 500ms;
+  z-index: 100;
+}
+
+.closedMenu {
+  left: 0;
+  transition: left 500ms;
+}
+
+header ul li {
+  margin: 10px;
+}
+
+header ul li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  padding: 10px 0;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+}
+
+/* MENU PROFILE */
+.closeMenu {
+  width: auto;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 35px;
+}
+.profileMenu {
+  background-color: #6760f7;
+  border-radius: 10px;
+  padding: 5px;
+}
+.profileMenu .saludoProfile {
+  display: flex;
+  flex-direction: row;
+  padding: 15px 5px;
+  background-color: #4e46e560;
+  border-radius: 10px;
+}
+.profileMenu .saludoProfile h4 {
+  width: 60%;
+  font-size: 25px;
+  align-self: center;
+}
+.profileMenu .imageUserBoxMenu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+.profileMenu .imageUserBoxMenu img {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profileMenu .menuProfile {
+  display: flex;
+  flex-direction: column;
+}
+.profileMenu .menuProfile a {
+  color: rgb(255, 255, 255);
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+}
+.logOut{
+  border: none;
+  background:none ;
+  color: aliceblue;
+}

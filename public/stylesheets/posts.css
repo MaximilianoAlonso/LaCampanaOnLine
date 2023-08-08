@@ -1,0 +1,41 @@
+.main_posts {
+  padding: 10px 5px 30px 5px ;
+}
+.main_posts h2 {
+  text-align: center;
+}
+.main_posts section form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.main_posts section form button {
+  background-color: none;
+  border: none;
+}
+.main_posts section form div {
+  position: relative;
+}
+.main_posts section form input {
+  padding: 8px;
+  width: 90vw;
+  border-radius: 25px;
+  font-size: 20px;
+}
+.main_posts section form input::placeholder {
+  font-size: 20px;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  padding: 9px;
+  border-radius: 50px;
+  color: rgb(255, 255, 255);
+  background-color: #4f46e5;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

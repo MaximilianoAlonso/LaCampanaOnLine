@@ -1,0 +1,27 @@
+.main_createPost{
+padding: 10px 10px 30px 10px;
+}
+.main_createPost form{
+    
+}
+.main_createPost form .estado{
+    display: flex;
+ justify-content: space-around;
+    padding: 10px 0;
+}
+.main_createPost form .descripcion {
+   padding: 10px 0 !important;
+    
+    }
+.main_createPost form .descripcion textarea{
+resize: none;
+    height: 200px;
+    
+
+}
+.main_createPost form #foto{
+    margin: 10px 0;
+}
+.main_createPost form .fotos{
+   padding-top: 20px;
+}

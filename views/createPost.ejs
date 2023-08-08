@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <%- include("./partials/head") %>
+  <body>
+    <%- include("./partials/header") %>
+    <main class="main_createPost">
+        <h1>Crear Publicacion!</h1>
+        <form method="post" enctype="multipart/form-data">
+
+<!-- TITULO -->            
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="title">
+    <label for="floatingInput">Titulo</label>
+  </div>
+<!-- CATEGORIAS -->  
+          <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" name="category">
+                <option selected hidden>Categoria</option>
+                <option value="Electrónica">Electrónica</option>
+                <option value="Moda y Accesorios">Moda y Accesorios</option>
+                <option value="Hogar y Decoración">Hogar y Decoración</option>
+                <option value="Belleza y Cuidado Personal">Belleza y Cuidado Personal</option>
+                <option value="Deportes y Aire Libre">Deportes y Aire Libre</option>
+                <option value="Libros y Medios">Libros y Medios</option>
+                <option value="Juguetes y Juegos">Juguetes y Juegos</option>
+                <option value="Salud y Bienestar">Salud y Bienestar</option>
+                <option value="Automóviles y Motocicletas">Automóviles y Motocicletas</option>
+              </select>
+          </div>
+<!-- ESTADO -->
+<div class="estado">
+    <div class="form-check">
+        <input class="form-check-input" type="radio" value="Nuevo"  name="estado" checked>
+        <label class="form-check-label" for="estado">
+          Nuevo
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio"  value="Usado"  name="estado">
+        <label class="form-check-label" for="estado">
+         Usado
+        </label>
+      </div>
+</div>
+<div class="form-floating mb-3">
+  <input type="number" class="form-control" id="floatingInput" placeholder=" " name="price">
+  <label for="floatingInput">Precio</label>
+</div>
+          
+<!-- DESCRIPCION -->
+          <div class="form-floating descripcion" id="description">
+            <textarea class="form-control" placeholder="Describe el producto" id="floatingTextarea" name="content"></textarea>
+            <label for="floatingTextarea">Descripcion:</label>
+          </div>
+        
+ <!-- FOTOS -->        
+          <div class="mb-3">
+            <label for="avatar" class="form-label ">Fotos:</label>
+            <input type="file" class="form-control" id="foto"  name="imageOne">
+            <input type="file" class="form-control" id="foto" name="imageTwo">
+            <input type="file" class="form-control" id="foto"  name="imageThree">
+          </div>
+
+      
+
+          <button type="submit" class="btn btn-primary">Publicar</button>
+        </form>
+
+    </main>
+
+
+    </main>
+    <%- include("./partials/footer") %>
+    <%- include("./partials/scripts") %>
+
+  </body>
+</html>

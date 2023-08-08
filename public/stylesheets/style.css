@@ -1,0 +1,15 @@
+@import url("./general.css");
+@import url("./header.css");
+@import url("./home.css");
+@import url("./posts.css");
+
+
+@import url("./login.css");
+@import url("./register.css");
+@import url("./profile.css");
+@import url("./contact.css");
+@import url("./faq.css");
+@import url("./createPost.css");
+@import url("./carousel.css");
+@import url("./footer.css");
+@import url("./userPosts.css");

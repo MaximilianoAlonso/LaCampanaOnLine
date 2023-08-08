@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <%- include("./partials/head") %>
+  <body>
+    <%- include("./partials/header") %>
+    <main class="main_profile">
+        
+        <% if (userLogin) { %>
+          <section>
+             <h1>Hola <%= userLogin.name %> !</h1>
+             <article>
+              <div><img src="/images/UserImage/<%=userLogin.avatar %>" alt=""></div>
+              <h3>Datos Personales:</h3>
+              <ul>
+                <li><b>Nombre:</b><%=userLogin.name %></li>
+                <li><b>Apellido:</b><%=userLogin.surname %></li>
+                <li><b>Direccion:</b><%=userLogin.addres %></li>
+                <li><b>Telefono:</b><%=userLogin.phone %></li>
+                <li><b>Correo:</b><%=userLogin.email %></li>
+               
+              </ul>
+              <a class="profileButton" href="/posts/crear">Crear Publicacion</a>
+              <a class="profileButton" href="">Modificar Mis Datos</a>
+              <a class="profileButton" href="/posts/userPosts">Ver Mis publicaciones</a>
+              
+             </article>
+          </section>
+        
+
+        <% } %>
+     
+
+    </main>
+
+    <%- include("./partials/footer") %>
+    <%- include("./partials/scripts") %>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <%- include("./partials/head") %>
+  <body>
+    <%- include("./partials/header") %>
+    <main class="main_register">
+        <h1>Registrate!</h1>
+        <form  method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="surname" class="form-label">Apellido:</label>
+            <input type="text" class="form-control" id="surname" name="surname">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Telefono:</label>
+            <input type="number" class="form-control" id="phone" name="phone">
+          </div>
+          <div class="mb-3">
+            <label for="addres" class="form-label">Direccion:</label>
+            <input type="text" class="form-control" id="addres" name="addres">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electronico:</label>
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="avatar" class="form-label">Foto:</label>
+            <input type="file" class="form-control" id="avatar" name="avatar">
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password">
+          </div>
+          <div class="mb-3">
+            <label for="password2" class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="password2" >
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+    </main>
+
+
+    </main>
+    <%- include("./partials/footer") %>
+    <%- include("./partials/scripts") %>
+  </body>
+</html>

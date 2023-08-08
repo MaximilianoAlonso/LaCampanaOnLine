@@ -1,0 +1,25 @@
+footer{
+    -webkit-box-shadow: 0px -5px 6px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -5px 6px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px -5px 6px -1px rgba(0,0,0,0.75);
+    background-color: #4f46e5;
+    color: whitesmoke;   
+}
+footer section article ul{
+padding: 10px;
+text-align: center;
+}
+
+footer ul a{
+display: block;
+padding: 5px;
+letter-spacing: 1px;
+text-decoration: none;
+font-size: 20px;
+color: aliceblue;
+    
+}
+footer section article p{
+text-align: center;
+line-height: 10px
+}

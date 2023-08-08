@@ -1,0 +1,31 @@
+<header>
+  <a class="titleHeader" href="/"> <h1> <i class="fa-solid fa-cart-shopping logo"></i>CampanaOnLine</h1></a>
+
+  <ul>
+    <i class="fa-regular fa-circle-xmark closeMenu"></i>
+    <li><a href="/posts">PUBLICACIONES</a></li>
+    <li><a href="/users/login">INGRESAR</a></li>
+    <li><a href="/users/register">REGISTRARSE</a></li>
+    <li><a href="/faq">PREGUNTAS FRECUENTES</a></li>
+    <li><a href="/contact">CONTACTANOS</a></li>
+<% if (locals.userLogin) { %>
+  <div class="profileMenu">
+      <div class="saludoProfile">
+        <h4>Hola <%= userLogin.name %></h4>
+        <div class="imageUserBoxMenu" ><img src="/images/UserImage/<%=userLogin.avatar %>" alt=""></div>
+        
+  
+        
+      </div>
+      <div class="menuProfile"> 
+        <a href="/users/profile">Mi Perfil</a>
+        <a href="/posts/userPosts">Mis Publicaciones</a>
+        <a class="logOut" href="/users/logOut">Cerrar sesion</a>
+      </div>
+    </div>
+<% } %>
+   
+  </ul>
+
+  <i class="fa-solid fa-bars header_burger"></i>
+</header>
