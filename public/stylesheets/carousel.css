@@ -1,18 +1,34 @@
 .swiper {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 50vh;
+  padding: 10px !important;
 }
 
-.swiper-slide {
+.swiper-slide {  background-color: rgba(54, 54, 240, 0.76);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Agrega esta línea para asegurarte de que cada diapositiva ocupe todo el alto disponible */
+  padding: 10px 10px 80px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px black;
 }
+
+.swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+
+}
+
 
 .textoCarousel {
   width: 100%;
   position: absolute;
   bottom: 0px;
-  background-color: rgba(240, 248, 255, 0.534);
-  padding: 10px 5px;
+  background-color: rgba(240, 248, 255, 0.726);
+  padding: 13px 8px;
   display: flex;
   justify-content: space-between;
 }
@@ -22,9 +38,13 @@
   align-self: center;
 }
 .textoCarousel .precioCarousel {
-  font-size: 30px;
-  font-weight: 900;
+  font-size: 20px;
+  font-weight: 800;
   align-self: center;
+}
+.swiper-pagination-fraction{
+padding: 8px 0;
+
 }
 
 

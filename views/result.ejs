@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <%- include("./partials/head") %>
+  <body>
+    <%- include("./partials/header") %>
+    <main class="main_result main_posts">
+      <%- include("./partials/buscador") %>
+      <section>
+        <h2> Resultados de: <%= keywords %> </h2>
+     <% searchProduct.forEach(({title,imageOne,price, state }) => { %>   
+        <article  class="boxResult">
+                <img src="/images/Posts/<%= imageOne %>" />
+                <div class="textoResult">
+                  <h4 class="tituloResult"><%= title %></h4>
+                  <h4 class="estadoResult">$ <%= toThousand(price)  %></h4>
+                  <h4 class="precioResult"> <%= state %></h4>
+                </div>     
+        </article>
+        <% }) %>
+
+
+     </section>
+
+    </main>
+    <%- include("./partials/footer") %> <%- include("./partials/scripts") %>
+  </body>
+</html>

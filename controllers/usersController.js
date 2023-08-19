@@ -51,10 +51,11 @@ module.exports = {
     } else {
       
       /* aca me daria los errores de las validaciones */
- /*     return res.send(errors.mapped().password.msg) */
+ /*     return res.send(errors.mapped()) */
+
       return res.render('login', {
         title: 'Ingresar!',
-        errors: errors.mapped,
+        errors: errors.mapped(),
         old: req.body,
     })
     }
@@ -91,13 +92,17 @@ module.exports = {
           email: email.trim(),
           password: hashSync(password, 12),
         });
-        return res.send(newUser);
+        return res.redirect("login");
       } catch (error) {
         console.log(error);
       }
     } else {
-      const errorsArray = errors.mapped();
-      return res.send(errorsArray);
+      return res.render("register",{
+        title: "Registrate!",
+        errors: errors.mapped(),
+         old: req.body
+      } );
+     
     }
   },
 };

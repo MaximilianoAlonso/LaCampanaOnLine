@@ -5,27 +5,35 @@
     <%- include("./partials/header") %>
     <main class="main_createPost">
         <h1>Crear Publicacion!</h1>
-        <form method="post" enctype="multipart/form-data">
+<!-- FORMULARIO -->
+        <form method="post" enctype="multipart/form-data" id="formProduct">
 
 <!-- TITULO -->            
 <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="floatingInput" placeholder=" " name="title">
+    <input type="text" class="form-control titleProduct" id="floatingInput" name="title"  value="<%= locals.old && old.title ? old.title : null %>">
     <label for="floatingInput">Titulo</label>
+    <small class="errorsRegister" id="errorTitle">
+      <%= locals.errors && errors.title ? errors.title.msg : null %>
+    </small> 
   </div>
 <!-- CATEGORIAS -->  
           <div class="mb-3">
-            <select class="form-select" aria-label="Default select example" name="category">
-                <option selected hidden>Categoria</option>
-                <option value="Electrónica">Electrónica</option>
-                <option value="Moda y Accesorios">Moda y Accesorios</option>
-                <option value="Hogar y Decoración">Hogar y Decoración</option>
-                <option value="Belleza y Cuidado Personal">Belleza y Cuidado Personal</option>
-                <option value="Deportes y Aire Libre">Deportes y Aire Libre</option>
-                <option value="Libros y Medios">Libros y Medios</option>
-                <option value="Juguetes y Juegos">Juguetes y Juegos</option>
-                <option value="Salud y Bienestar">Salud y Bienestar</option>
-                <option value="Automóviles y Motocicletas">Automóviles y Motocicletas</option>
+            <select class="form-select categoryProduct" aria-label="Default select example" name="category">
+                <option selected hidden value="">Categoria</option>
+                <option value= "Electrónica">Electrónica</option>
+                <option value="Moda-y-Accesorios">Moda y Accesorios</option>
+                <option value="Hogar-y-Decoración">Hogar y Decoración</option>
+                <option value="Belleza-y-Cuidado Personal">Belleza y Cuidado Personal</option>
+                <option value="Deportes-y-Aire-Libre">Deportes y Aire Libre</option>
+                <option value="Libros-y-Medios">Libros y Medios</option>
+                <option value="Juguetes-y-Juegos">Juguetes y Juegos</option>
+                <option value="Salud-y-Bienestar">Salud y Bienestar</option>
+                <option value="Automóviles-y-Motocicletas">Automóviles y Motocicletas</option>
+                <option value="Otros">Otros</option>
               </select>
+              <small class="errorsRegister" id="errorCategory">
+                <%= locals.errors && errors.category? errors.category.msg : null %>
+              </small> 
           </div>
 <!-- ESTADO -->
 <div class="estado">
@@ -43,27 +51,35 @@
       </div>
 </div>
 <div class="form-floating mb-3">
-  <input type="number" class="form-control" id="floatingInput" placeholder=" " name="price">
+  <input type="number" class="form-control priceProduct" id="floatingInput" placeholder=" " name="price">
   <label for="floatingInput">Precio</label>
+  <small class="errorsRegister" id="errorPrice">
+    <%= locals.errors && errors.price ? errors.price.msg : null %>
+  </small> 
 </div>
           
 <!-- DESCRIPCION -->
-          <div class="form-floating descripcion" id="description">
-            <textarea class="form-control" placeholder="Describe el producto" id="floatingTextarea" name="content"></textarea>
+          <div class="form-floating descripcion " id="description">
+            <textarea class="form-control descriptionProduct" placeholder="Describe el producto" id="floatingTextarea" name="content"><%= locals.old && old.content? old.content: null %></textarea>
             <label for="floatingTextarea">Descripcion:</label>
+            <small class="errorsRegister" id="errorContent">
+              <%= locals.errors && errors.content? errors.content.msg : null %>
+            </small> 
           </div>
         
  <!-- FOTOS -->        
           <div class="mb-3">
             <label for="avatar" class="form-label ">Fotos:</label>
-            <input type="file" class="form-control" id="foto"  name="imageOne">
-            <input type="file" class="form-control" id="foto" name="imageTwo">
-            <input type="file" class="form-control" id="foto"  name="imageThree">
+            <input type="file" class="form-control imageOneProduct" id="foto"  name="imageOne" placeholder="Imagen Principal">
+            <input type="file" class="form-control imageTwoProduct" id="foto" name="imageTwo" placeholder="Imagen secundaria">
+            <input type="file" class="form-control imageThreeProduct" id="foto"  name="imageThree" placeholder="Imagen secundaria">
+            <small class="errorsRegister" id="errorImages">
+            </small> 
           </div>
 
       
 
-          <button type="submit" class="btn btn-primary">Publicar</button>
+          <button id="butttonSubmit" type="submit" class="btn btn-primary">Publicar</button>
         </form>
 
     </main>
@@ -71,7 +87,10 @@
 
     </main>
     <%- include("./partials/footer") %>
+    <script src="/javaScripts/formProduct.js"></script>
     <%- include("./partials/scripts") %>
+    
+
 
   </body>
 </html>

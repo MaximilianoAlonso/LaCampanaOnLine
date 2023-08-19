@@ -1,0 +1,46 @@
+.verContraseña{
+    position: relative;
+}
+
+.verContraseña .cerrado {
+    position: absolute;
+    top:60%;
+    right: 10px;
+    cursor: pointer;
+    padding: 5px;
+    background-color:#E8F0FE;
+   
+}
+.verContraseña .abierto {
+    position: absolute;
+    top:60%;
+    right: 10px;
+    cursor: pointer;
+    background-color:#E8F0FE;
+    padding: 5px;
+   
+}
+.verContraseña .cerrado2 {
+    position: absolute;
+    top:60%;
+    right: 10px;
+    cursor: pointer;
+    padding: 1px;
+    background-color:#ffffff;
+    z-index: 50;
+}
+.verContraseña .abierto2 {
+    position: absolute;
+    top:60%;
+    right: 10px;
+    cursor: pointer;
+    padding: 1px;
+    background-color:#ffffff;
+    z-index: 100;
+}
+.verContraseña .noVer{
+    display: none;
+}
+.verContraseña .noVer2{
+    display: none;
+}

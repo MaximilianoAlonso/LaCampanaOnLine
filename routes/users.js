@@ -3,17 +3,17 @@ const {profile, userPosts, login, register, saveRegister, loadLogin, logOut} = r
 
 const {upload} = require("../middlewares/uploadImageUser")
 const userValidation = require("../validations/loginValidation")
-
-const localUserCheck = require("../middlewares/localUserCheck")
-const checkUserLog = require("../middlewares/checkUserLog")
+const registerValidation = require("../validations/registerValidation")
+const checkUserLogin = require("../middlewares/checkUserLogin")
+const checkUserGuest = require("../middlewares/checkUserGuest")
 
 /* GET users listing. */
-router.get('/profile', localUserCheck, profile)
-    .get('/login', login)
+router.get('/profile', checkUserGuest, profile)
+    .get('/login',checkUserLogin, login)
     .post('/login',userValidation, loadLogin)
     .get("/logOut", logOut)
-    .get('/register', register)
-    .post('/register',upload.single('avatar'), saveRegister)
+    .get('/register',register)
+    .post('/register', upload.single('avatar'), registerValidation, saveRegister)
     
 
 module.exports = router;

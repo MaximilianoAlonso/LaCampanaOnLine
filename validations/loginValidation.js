@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 const { check, body } = require("express-validator");
 const db = require("../database/models");
 const {compareSync} =require("bcryptjs")
@@ -23,6 +21,7 @@ module.exports = [
             email: req.body.email,
           },
         })
+        
         /* compara los datos ingresados con los de la base de datos*/
         .then((user) => {
           if (!user || !compareSync(value, user.password)) {
@@ -30,7 +29,6 @@ module.exports = [
             return Promise.reject();
           }
         })
-  
         .catch((error) => Promise.reject("Credenciales inválidas"));
     }),
 ];

@@ -5,3 +5,17 @@
     margin: 5px;
     text-align: center;
 }
+
+.errorsRegister{
+    display: block;
+    color: rgb(204, 25, 25);
+    text-align: center;
+}
+#errorPassword{
+    margin-top: -10px;
+padding-bottom: 10px;
+}
+#errorPassword2{
+    margin-top: -10px;
+padding-bottom: 10px;
+}

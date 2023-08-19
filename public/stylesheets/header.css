@@ -47,10 +47,10 @@ header ul {
   top: 0;
   left: -100vw;
   width: 100%;
-  height: 100%;
+  height: auto;
   text-align: center;
   background-color: #4f46e5;
-  padding: 40px 20px 20px 20px;
+  padding: 40px 20px 300px 20px;
   font-size: 20px;
   color: rgb(255, 255, 255);
   transition: left 500ms;
@@ -62,7 +62,7 @@ header ul {
   transition: left 500ms;
 }
 
-header ul li {
+header .menuHeader li {
   margin: 10px;
 }
 
@@ -132,3 +132,28 @@ header ul li a {
   background:none ;
   color: aliceblue;
 }
+.categoriasButtonOpen{
+  background-color: #756efc;
+  text-align: center;
+  border-radius: 10px;
+  transition:  all 1s;
+}
+.categoriasMenu{
+  display: none;
+  background-color: #756efc;
+list-style: none;
+border-radius: 10px;
+transition:  all 1s;
+
+}
+
+.categoriasMenuClosed{
+display: block;
+transition:  all 1s;
+}
+header a:hover{
+  color: white;
+}
+
+
+

@@ -1,34 +1,34 @@
 .main_posts {
-  padding: 10px 5px 30px 5px ;
+  padding: 10px 0 50px 0;
 }
 .main_posts h2 {
   text-align: center;
 }
-.main_posts section form {
+.searchBox form {
   display: flex;
   justify-content: center;
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
 }
-.main_posts section form button {
+.searchBox form button {
   background-color: none;
   border: none;
 }
-.main_posts section form div {
+.searchBox form div {
   position: relative;
 }
-.main_posts section form input {
+.searchBox form input {
   padding: 8px;
   width: 90vw;
   border-radius: 25px;
   font-size: 20px;
 }
-.main_posts section form input::placeholder {
+.searchBox form input::placeholder {
   font-size: 20px;
 }
 
-.searchIcon {
+.searchBox .searchIcon {
   position: absolute;
   top: 50%;
   right: 14px;

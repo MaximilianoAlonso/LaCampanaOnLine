@@ -5,7 +5,21 @@
     <%- include("./partials/header") %>
     <main class="main_contact">
 
-        <h1>ESTAS EN CONTACTOS </h1>
+        <h1>Consultas y/o Sugerencias </h1>
+        <form method="post">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder=" " name="title">
+            <label for="floatingInput">Nombre:</label>
+          </div>
+          <div class="form-floating descripcion" id="description">
+            <textarea class="form-control" placeholder="Describe el producto" id="floatingTextarea" name="content"></textarea>
+            <label for="floatingTextarea">Consulta o Sugerencia::</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Publicar</button>
+
+
+
+        </form>
 
     </main>
     <%- include("./partials/footer") %>

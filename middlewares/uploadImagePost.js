@@ -33,7 +33,7 @@ const uploadPostsImage = (req, res, next) => {
         if (error) {
             req.fileValidationError = "Error en la carga de imágenes";
         }
-        next(); // Pasar al siguiente middleware después de manejar la carga de imágenes
+        next();
     });
 };
 

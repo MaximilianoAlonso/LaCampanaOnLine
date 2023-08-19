@@ -3,62 +3,32 @@
   <%- include("./partials/head") %>
   <body>
     <%- include("./partials/header") %>
-    <main class="main_userPosts">
+    <main class="main_userPosts main_posts">
       <section>
-        <h1>MIS PUBLICACIONES</h1>
-         <% post.forEach(item => { %>
-        <article class="postCardDetail">
-        <div>
-            <h4><%= item.title %></h4>
-            <h5><%= item.state %></h5>
-            <h5>$<%= toThousand(item.price) %></h5>
-            <p class="description" ><%= item.content %></p>
-        </div>
-          <div
-            style="
-              --swiper-navigation-color: #fff;
-              --swiper-pagination-color: #fff;
-            "
-            class="swiper mySwiper1"
-          >
-            <div class="swiper-wrapper">
-              <% if (item.imageOne) { %>
-              <div class="swiper-slide">
-                <div class="swiper-zoom-container imgCarousel">
-                  <img id="imgCarousel"
-                    src="/images/Posts/<%= item.imageOne %>"
-                    alt="imageProduct"
-                  />
+        <h2>Mis Publicaciones</h2>
+
+        <div style=" --swiper-navigation-color: #fff; --swiper-pagination-color: #fff;  "class="swiper mySwiper carouselBox"> 
+          <div class="swiper-wrapper">
+      <% post.forEach(item => { %>
+            <div class="swiper-slide">
+              <div class="swiper-zoom-container imgCarousel">
+                <img src="/images/Posts/<%= item.imageOne %>" />
+                <div class="textoCarousel">
+                  <h4 class="tituloCarousel"><%= item.title %></h4>
+                  <h4 class="precioCarousel">$ <%= toThousand(item.price)  %></h4>
                 </div>
               </div>
-              <% } %> <% if (item.imageTwo) { %>
-              <div class="swiper-slide">
-                <div class="swiper-zoom-container imgCarousel">
-                  <img id="imgCarousel"
-                    src="/images/Posts/<%= item.imageTwo %>"
-                    alt="imageProduct"
-                  />
-                </div>
-              </div>
-              <% } %> <% if (item.imageThree) { %>
-              <div class="swiper-slide">
-                <div class="swiper-zoom-container imgCarousel">
-                  <img id="imgCarousel"
-                    src="/images/Posts/<%= item.imageThree %>"
-                    alt="imageProduct"
-                  />
-                </div>
-              </div>
-              <% } %>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+    <% }) %>
           </div>
-        </article>
-            <% }) %>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
       </section>
     </main>
-    <%- include("./partials/footer") %> <%- include("./partials/scripts") %>
+    <%- include("./partials/footer") %>
+     <%- include("./partials/scripts") %>
+    <script src="/javaScripts/carousel.js"></script>
   </body>
 </html>

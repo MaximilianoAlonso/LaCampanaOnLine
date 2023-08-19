@@ -5,40 +5,79 @@
     <%- include("./partials/header") %>
     <main class="main_register">
         <h1>Registrate!</h1>
-        <form  method="post" enctype="multipart/form-data">
+        <form  method="post" enctype="multipart/form-data" id="formRegister">
+<!-- NOMBRE -->
           <div class="mb-3">
             <label for="name" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control" id="nameRegister" name="name" value="<%= locals.old && old.name ? old.name : null %>">
+
+            <small class="errorsRegister" id="errorName">
+              <%= locals.errors && errors.name ? errors.name.msg : null %>
+            </small>
+<!-- APELLIDO -->            
           </div>
           <div class="mb-3">
             <label for="surname" class="form-label">Apellido:</label>
-            <input type="text" class="form-control" id="surname" name="surname">
+            <input type="text" class="form-control" id="surnameRegister" name="surname" value="<%= locals.old && old.surname ? old.surname : null %>">
+            <!-- ERRORS -->
+            <small class="errorsRegister" id="errorSurname">
+              <%= locals.errors && errors.surname? errors.surname.msg : null %>
+            </small>
           </div>
+<!-- TELEFONO -->            
           <div class="mb-3">
             <label for="phone" class="form-label">Telefono:</label>
-            <input type="number" class="form-control" id="phone" name="phone">
+            <input type="number" class="form-control" id="phoneRegister" name="phone" value="<%= locals.old && old.phone ? old.phone : null %>">
+               <!-- ERRORS -->
+               <small class="errorsRegister" id="errorPhone">
+                <%= locals.errors && errors.phone ? errors.phone.msg : null %>
+              </small>
           </div>
+<!-- DIRECCION -->   
           <div class="mb-3">
             <label for="addres" class="form-label">Direccion:</label>
-            <input type="text" class="form-control" id="addres" name="addres">
+            <input type="text" class="form-control" id="addresRegister" name="addres" value="<%= locals.old && old.addres ? old.addres : null %>">
           </div>
+<!-- CORREO -->   
           <div class="mb-3">
             <label for="email" class="form-label">Correo electronico:</label>
-            <input type="email" class="form-control" id="email" name="email">
-          </div>
-          <div class="mb-3">
-            <label for="avatar" class="form-label">Foto:</label>
-            <input type="file" class="form-control" id="avatar" name="avatar">
+            <input type="email" class="form-control" id="emailRegister" name="email" value="<%= locals.old && old.email ? old.email : null %>" >
+               <!-- ERRORS -->
+               <small class="errorsRegister" id="errorEmail">
+                <%= locals.errors && errors.email ? errors.email.msg : null %>
+              </small>
           </div>
 
+<!-- FOTO -->
           <div class="mb-3">
+            <label for="avatar" class="form-label">Foto:</label>
+            <input type="file" class="form-control" id="avatarRegister" name="avatar">
+          </div>
+
+<!-- PASSWORD -->
+          <div class="mb-3 verContraseña" >
             <label for="password" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="password" name="password">
-          </div>
-          <div class="mb-3">
+            <input type="password" class="form-control" id="passwordRegister" name="password">
+            <i class="fa-solid fa-eye-slash cerrado" ></i>
+            <i class="fa-solid fa-eye abierto " ></i>
+               <!-- ERRORS -->
+          </div>   
+           <small class="errorsRegister" id="errorPassword">
+                <%= locals.errors && errors.password ? errors.password.msg : null %>
+              </small> 
+
+ <!-- PASSWORD2 -->         
+          <div class="mb-3 verContraseña">
             <label for="password2" class="form-label">Confirmar Contraseña</label>
-            <input type="password" class="form-control" id="password2" >
+            <input type="password" class="form-control" id="password2Register" name="password2">
+            <i class="fa-solid fa-eye-slash cerrado2" ></i>
+            <i class="fa-solid fa-eye abierto2 " ></i>  
+            <!-- ERRORS -->
+             
           </div>
+          <small class="errorsRegister" id="errorPassword2">
+            <%= locals.errors && errors.password2 ? errors.password2.msg : null %>
+          </small> 
 
           <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
@@ -46,8 +85,12 @@
     </main>
 
 
-    </main>
+
     <%- include("./partials/footer") %>
+    <script src="/javaScripts/formRegister.js"></script>
+    
     <%- include("./partials/scripts") %>
+
+
   </body>
 </html>

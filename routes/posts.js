@@ -1,18 +1,20 @@
 const router = require('express').Router()
-const {allPosts, createPost, savePost, userPosts} = require("../controllers/postsController")
+const {allPosts, detail, createPost, savePost, userPosts} = require("../controllers/postsController")
 
 
 const {     uploadPostsImage
 } = require('../middlewares/uploadImagePost');
 
-const localUserCheck = require("../middlewares/localUserCheck")
-const checkUserLog = require("../middlewares/checkUserLog")
+const checkUserGuest = require("../middlewares/checkUserGuest")
+const postValidator = require("../validations/postValidator")
 
 /* GET home page. */
 router.get('/', allPosts)
-.get('/userPosts', checkUserLog, userPosts)
-.get('/crear', checkUserLog,  createPost)
-.post('/crear', uploadPostsImage,  savePost)
+.get('/detalle/:id', detail)
+.get('/userPosts', checkUserGuest, userPosts)
+.get('/crear', checkUserGuest,  createPost)
+.post('/crear', uploadPostsImage, postValidator,  savePost)
+.get('/:category?', allPosts)
 
 
 module.exports = router;

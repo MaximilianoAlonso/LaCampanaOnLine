@@ -19,6 +19,11 @@ font-size: 20px;
 color: aliceblue;
     
 }
+footer ul a:hover{
+
+    color: aliceblue;
+        
+    }
 footer section article p{
 text-align: center;
 line-height: 10px

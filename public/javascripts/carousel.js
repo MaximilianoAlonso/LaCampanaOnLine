@@ -1,9 +1,15 @@
 const swiper = new Swiper(".mySwiper", {
-    zoom: true,
+    zoom: false,
+    loop:true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+
     breakpoints: {
       // when window width is >= 320px
       320: {
@@ -17,6 +23,7 @@ const swiper = new Swiper(".mySwiper", {
       },
       // when window width is >= 640px
       1024: {
+        
         slidesPerView: 4,
         spaceBetween: 40
       }

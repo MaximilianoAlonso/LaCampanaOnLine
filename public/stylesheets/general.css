@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
 }
 a {
   text-decoration: none;
@@ -14,8 +15,4 @@ body {
   flex-direction: column;
   justify-content: center;
 
-}
-a:hover{
-  font-weight: 900;
-  color: #000 !important;
 }

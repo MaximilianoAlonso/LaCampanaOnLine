@@ -1,0 +1,7 @@
+.main_contact{
+    padding: 15px 10px 60px;
+}
+.main_contact textarea{
+   height: 200px !important;
+   margin-bottom: 10px;
+}

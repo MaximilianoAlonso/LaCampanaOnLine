@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <%- include("./partials/head") %>
+  <body>
+    <%- include("./partials/header") %>
+    <main class="main_detail">
+      <h2 class="tituloDetalle">Detalles de la publicacion</h2>
+      <section>
+        <article class="descriptionDetail">
+          <h2><%= oneProduct.title %></h2>
+          <p><%= oneProduct.content %></p>
+
+          <div class="tablaDetail">
+            <div class="row1">
+              <h4><b>Precio:</b></h4>
+              <h4>$ <%= toThousand(oneProduct.price) %></h4>
+            </div>
+
+            <div class="row2">
+              <h4><b>Estado: </b></h4>
+              <h4><%= oneProduct.state %></h4>
+            </div>
+
+            <div class="row1">
+              <h4><b> Categoria: </b></h4>
+              <h4><%= oneProduct.category.replace(/-/g, ' ') %></h4>
+            </div>
+          </div>
+        </article>
+
+        <article class="imagesDetail">
+          <% if (oneProduct.imageOne ) { %>
+          <img
+            class="imagenUno"
+            src="/images/Posts/<%= oneProduct.imageOne   %>"
+            alt=""
+          />
+          <% } %> <% if (oneProduct.imageTwo ) { %>
+
+          <img
+            class="imagenDos"
+            src="/images/Posts/<%= oneProduct.imageTwo  %>"
+            alt=""
+          />
+          <% } %> <% if (oneProduct.imageThree ) { %>
+
+          <img
+            class="imagenTres"
+            src="/images/Posts/<%= oneProduct.imageThree  %>"
+            alt=""
+          />
+          <% } %>
+
+
+
+        <article class="contactUser">
+          <h3><%= user.phone %></h3>
+          <h2><%= user.name %></h2>
+        </article>
+      </section>
+    </main>
+    <%- include("./partials/footer") %>
+    <script src="/javaScripts/detail.js"></script>
+    <%- include("./partials/scripts") %>
+  </body>
+</html>

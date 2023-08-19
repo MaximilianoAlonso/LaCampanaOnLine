@@ -4,19 +4,22 @@
   <body>
     <%- include("./partials/header") %>
     <main class="main_posts">
-      <section>
-        <form action="/" method="post">
-          <div>
-            <input type="text" name="search" placeholder="Buscar...." />
-            <button type="submit">
-              <i class="fa-solid fa-search searchIcon"></i>
-            </button>
-          </div>
-        </form>
-      </section>
-      <section>
-        <h2>Últimos articulos agregados</h2>
+      <%- include("./partials/buscador") %>
 
+      <section>
+        <h2>
+          <% if (categoryFilt) { %> <%= categoryFilt.replace(/-/g, ' ') %> <%
+          filterCategory.forEach(({title,imageOne,price, state }) => { %>
+          <article class="boxResult">
+            <img src="/images/Posts/<%= imageOne %>" />
+            <div class="textoResult">
+              <h4 class="tituloResult"><%= title %></h4>
+              <h4 class="estadoResult">$ <%= toThousand(price) %></h4>
+              <h4 class="precioResult"><%= state %></h4>
+            </div>
+          </article>
+          <% }) %> <% }else{%> Últimos articulos agregados
+        </h2>
         <div
           style="
             --swiper-navigation-color: #fff;
@@ -25,62 +28,29 @@
           class="swiper mySwiper carouselBox"
         >
           <div class="swiper-wrapper">
+            <% post.forEach(item => { %>
             <div class="swiper-slide">
-              <div class="swiper-zoom-container">
-                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              <div class="swiper-zoom-container imgCarousel">
+                <img src="/images/Posts/<%= item.imageOne %>" />
                 <div class="textoCarousel">
-                  <h4 class="tituloCarousel">Titulo de articulo</h4>
-                  <h4 class="precioCarousel">5.000$</h4>
+                  <h4 class="tituloCarousel"><%= item.title %></h4>
+                  <h4 class="precioCarousel">
+                    $ <%= toThousand(item.price) %>
+                  </h4>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="swiper-zoom-container">
-                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="swiper-zoom-container">
-                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="swiper-zoom-container">
-                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="swiper-zoom-container">
-                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="swiper-zoom-container">
-                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="swiper-zoom-container">
-                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="swiper-zoom-container">
-                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="swiper-zoom-container">
-                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-              </div>
-            </div>
+            <% }) %>
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-pagination"></div>
         </div>
-      </section>
+
+        <% } %>
+
     </main>
     <%- include("./partials/footer") %> <%- include("./partials/scripts") %>
+    <script src="/javaScripts/carousel.js"></script>
   </body>
 </html>

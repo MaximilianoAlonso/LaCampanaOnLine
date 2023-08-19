@@ -1,30 +1,60 @@
 <header>
-  <a class="titleHeader" href="/"> <h1> <i class="fa-solid fa-cart-shopping logo"></i>CampanaOnLine</h1></a>
+  <a class="titleHeader" href="/">
+    <h1><i class="fa-solid fa-cart-shopping logo"></i>CampanaOnLine</h1>
+  </a>
 
-  <ul>
+  <ul class="menuHeader">
     <i class="fa-regular fa-circle-xmark closeMenu"></i>
     <li><a href="/posts">PUBLICACIONES</a></li>
+    <li>
+      <a class="categoriasButton" href="#">CATEGORIAS</a>
+      <ol class="categoriasMenu">
+        <li><a href="/posts/Electrónica">Electrónica</a></li>
+        <li><a href="/posts/Moda-y-Accesorios">Moda y Accesorios</a></li>
+        <li><a href="/posts/Hogar-y-Decoración">Hogar y Decoración</a></li>
+        <li>
+          <a href="/posts/Belleza-y-Cuidado-Personal">Belleza y Cuidado Personal</a>
+        </li>
+        <li>
+          <a href="/posts/Deportes-y-Aire-Libre">Deportes y Aire Libre</a>
+        </li>
+        <li>
+          <a href="/posts/Libros-y-Medios">Libros y Medios</a>
+        </li>
+        <li>
+          <a href="/posts/Juguetes-y-Juegos">Juguetes y Juegos</a>
+        </li>
+        <li>
+          <a href="/posts/Salud-y-Bienestar">Salud y Bienestar</a>
+        </li>
+        <li>
+          <a href="/posts/Automóviles-y-Motocicletas">Automóviles y Motocicletas</a>
+        </li>
+        <li>
+          <a href="/posts/Otros">Otros</a>
+        </li>
+      </ol>
+    </li>
     <li><a href="/users/login">INGRESAR</a></li>
     <li><a href="/users/register">REGISTRARSE</a></li>
     <li><a href="/faq">PREGUNTAS FRECUENTES</a></li>
     <li><a href="/contact">CONTACTANOS</a></li>
-<% if (locals.userLogin) { %>
-  <div class="profileMenu">
-      <div class="saludoProfile">
-        <h4>Hola <%= userLogin.name %></h4>
-        <div class="imageUserBoxMenu" ><img src="/images/UserImage/<%=userLogin.avatar %>" alt=""></div>
-        
-  
-        
+    <% if (locals.userLogin) { %>
+      <div class="profileMenu">
+        <div class="saludoProfile">
+          <h4>Hola <%= userLogin.name %>
+          </h4>
+          <div class="imageUserBoxMenu">
+            <img src="/images/UserImage/<%=userLogin.avatar %>" alt="" />
+          </div>
+        </div>
+        <div class="menuProfile">
+          <a href="/users/profile">Mi Perfil</a>
+          <a href="/posts/userPosts">Mis Publicaciones</a>
+          <a class="logOut" href="/users/logOut">Cerrar sesion</a>
+        </div>
       </div>
-      <div class="menuProfile"> 
-        <a href="/users/profile">Mi Perfil</a>
-        <a href="/posts/userPosts">Mis Publicaciones</a>
-        <a class="logOut" href="/users/logOut">Cerrar sesion</a>
-      </div>
-    </div>
-<% } %>
-   
+      <% } %>
   </ul>
 
   <i class="fa-solid fa-bars header_burger"></i>
