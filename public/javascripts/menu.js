@@ -1,4 +1,5 @@
 const clase = (querySelect) => document.querySelector(querySelect);
+
 /* menu */
 clase(".header_burger").addEventListener("click", () => {
   clase("header ul").classList.toggle("closedMenu");
@@ -10,8 +11,6 @@ clase(".closeMenu").addEventListener("click", () => {
   clase(".categoriasMenu").classList.remove("categoriasMenuClosed");
 });
 
-
-
 /* menu categorias */
 clase(".categoriasButton").addEventListener("click", () => {
   clase(".categoriasButton").classList.toggle("categoriasButtonOpen");
@@ -21,7 +20,6 @@ clase(".categoriasButton").addEventListener("click", () => {
 clase(".categoriasButton").addEventListener("click", () => {
   clase(".categoriasMenu").classList.toggle("closedMenu");
 });
-
 
 /* menu categorias de vista posts */
 clase(".categoriasButtonPosts").addEventListener("click", () => {
