@@ -59,7 +59,7 @@
                     <h5><b>Nombre: </b> <%= user.name %></h5>
                     <h5><b>Telefono: </b> <%= user.phone %></h5>
                     <h5>Enviale un Whatsapp!!</h5>
-                    <a class="whatsApp" href="https://api.whatsapp.com/send/?phone=<%= user.phone %>"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a class="whatsApp" href="https://api.whatsapp.com/send/?phone=+54<%= user.phone %>"><i class="fa-brands fa-whatsapp"></i></a>
                     
                     
 
@@ -71,7 +71,7 @@
       </section>
     </main>
     <%- include("./partials/footer") %>
-    <script src="/javaScripts/detail.js"></script>
+    <script src="/javascripts/detail.js"></script>
     <%- include("./partials/scripts") %>
   </body>
 </html>
