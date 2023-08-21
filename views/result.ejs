@@ -7,7 +7,8 @@
       <%- include("./partials/buscador") %>
       <section>
         <h2> Resultados de: <%= keywords %> </h2>
-     <% searchProduct.forEach(({title,imageOne,price, state }) => { %>   
+     <% searchProduct.forEach(({id,title,imageOne,price, state }) => { %>   
+      <a class="verResultados" href="/posts/detalle/<%= id %>">
         <article  class="boxResult">
                 <img src="/images/Posts/<%= imageOne %>" />
                 <div class="textoResult">
@@ -15,7 +16,7 @@
                   <h4 class="estadoResult">$ <%= toThousand(price)  %></h4>
                   <h4 class="precioResult"> <%= state %></h4>
                 </div>     
-        </article>
+        </article></a>
         <% }) %>
 
 

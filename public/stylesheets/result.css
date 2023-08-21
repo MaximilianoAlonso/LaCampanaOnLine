@@ -14,11 +14,16 @@ border-radius: 5px;
 box-shadow: 0 0 10px black;
 }
 .boxResult img{
-    width: 50%;
+    width: 40%;
     height: auto;
     }
 
 .textoResult{
+    width: 40%;
     align-self: center;
 
+}
+.verResultados{
+    text-decoration: none;
+    color: blanchedalmond;
 }

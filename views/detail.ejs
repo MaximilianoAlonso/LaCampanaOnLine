@@ -28,35 +28,41 @@
           </div>
         </article>
 
-        <article class="imagesDetail">
-          <% if (oneProduct.imageOne ) { %>
-          <img
-            class="imagenUno"
-            src="/images/Posts/<%= oneProduct.imageOne   %>"
-            alt=""
-          />
-          <% } %> <% if (oneProduct.imageTwo ) { %>
+       <!-- Miniaturas de imágenes -->
+<div class="thumbnails">
+  <% if (oneProduct.imageOne) { %>
+    <img class="thumbnail" src="/images/Posts/<%= oneProduct.imageOne %>" alt="">
+  <% } %>
+  <% if (oneProduct.imageTwo) { %>
+    <img class="thumbnail" src="/images/Posts/<%= oneProduct.imageTwo %>" alt="">
+  <% } %>
+  <% if (oneProduct.imageThree) { %>
+    <img class="thumbnail" src="/images/Posts/<%= oneProduct.imageThree %>" alt="">
+  <% } %>
+</div>
 
-          <img
-            class="imagenDos"
-            src="/images/Posts/<%= oneProduct.imageTwo  %>"
-            alt=""
-          />
-          <% } %> <% if (oneProduct.imageThree ) { %>
+<!-- Visor de imágenes en pantalla completa -->
+<div id="imageViewer" class="image-viewer">
+  <span class="close-button">&times;</span>
+  <img id="fullImage" class="full-image" src="" alt="">
+</div>
 
-          <img
-            class="imagenTres"
-            src="/images/Posts/<%= oneProduct.imageThree  %>"
-            alt=""
-          />
-          <% } %>
+<!-- Fondo negro -->
+<div id="overlay" class="overlay"></div>
 
 
           <% userPost.forEach(user => { %>
             <% if (user.id == oneProduct.userId) { %>
                <article class="contactUser">
-                    <h3><%= user.phone %></h3>
-                    <h2><%= user.name %></h2>
+                <h5><b>Contactá al vendedor: </b></h5>
+           
+                    <h5><b>Nombre: </b> <%= user.name %></h5>
+                    <h5><b>Telefono: </b> <%= user.phone %></h5>
+                    <h5>Enviale un Whatsapp!!</h5>
+                    <a class="whatsApp" href="https://api.whatsapp.com/send/?phone=<%= user.phone %>"><i class="fa-brands fa-whatsapp"></i></a>
+                    
+                    
+
                   </article>
             <% } %>
           <% }) %>
