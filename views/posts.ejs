@@ -30,9 +30,12 @@
           <div class="swiper-wrapper">
             <% post.forEach(item => { %>
             
-            <div class="swiper-slide">
-              <div class="swiper-zoom-container imgCarousel"><a href="/posts/detalle/<%= item.id %>">
-                <img src="/images/Posts/<%= item.imageOne %>" /></a>
+            <div class="swiper-slide" >
+              
+              <div class="swiper-zoom-container imgCarousel">
+                <a href="/posts/detalle/<%= item.id %>">
+                <img src="/images/Posts/<%= item.imageOne %>" />
+              </a>
                 <div class="textoCarousel">
                   <h4 class="tituloCarousel"><%= item.title %></h4>
                   <h4 class="precioCarousel">
@@ -56,6 +59,6 @@
     <script src="/javascripts/carousel.js"></script>
 
     <%- include("./partials/scripts") %>
-    
+
   </body>
 </html>

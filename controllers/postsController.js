@@ -27,22 +27,14 @@ module.exports = {
   detail: async (req,res) => {
     const {id} = req.params;
     try {
-      
-      const oneProduct = await db.posts.findByPk(id,{
-        include : [
-          {
-              model: db.users,
-              as: "user",
-            }
-        ]
-      }
-      )
+      const userPost = await db.users.findAll();
+      const oneProduct = await db.posts.findByPk(id)
       
  /*      res.send(oneProduct)  */
     res.render("detail", {
       title: "Detalles",
       oneProduct,
-      user : oneProduct.users,
+   userPost,
       toThousand
     }) 
 
@@ -53,14 +45,19 @@ module.exports = {
   },
   userPosts: async (req, res) => {
     try {
-      const postsAll = await db.posts.findAll({
-        include: [
-          {
-            association: "user",
-            attributes: ["id", "name"],
-          },
-        ],
-      });
+      const userId = req.session.userLogin.id;
+
+    // Consultar los posts del usuario logueado
+    const postsAll = await db.posts.findAll({
+      where: { userId }, // Filtrar por el ID del usuario logueado
+      include: [
+        {
+          association: "user",
+          attributes: ["id", "name"],
+        },
+      ],
+    });
+  /*     res.send(postsAll) */
       res.render("userPosts", {
         title: "Mis Publicaciones",
         post: postsAll,

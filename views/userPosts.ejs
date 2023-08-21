@@ -10,16 +10,19 @@
         <div style=" --swiper-navigation-color: #fff; --swiper-pagination-color: #fff;  "class="swiper mySwiper carouselBox"> 
           <div class="swiper-wrapper">
       <% post.forEach(item => { %>
-        <a href="/posts/detail/<%= item.id %>"><div class="swiper-slide">
+
+           <div class="swiper-slide verMas" >
               <div class="swiper-zoom-container imgCarousel">
+                <a href="/posts/detalle/<%= item.id %>">
                 <img src="/images/Posts/<%= item.imageOne %>" />
+                 </a>
                 <div class="textoCarousel">
                   <h4 class="tituloCarousel"><%= item.title %></h4>
                   <h4 class="precioCarousel">$ <%= toThousand(item.price)  %></h4>
                 </div>
               </div>
-            </div></a>
-            
+            </div>
+      
     <% }) %>
           </div>
           <div class="swiper-button-next"></div>

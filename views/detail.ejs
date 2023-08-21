@@ -52,11 +52,16 @@
           <% } %>
 
 
-
-        <article class="contactUser">
-          <h3><%= user.phone %></h3>
-          <h2><%= user.name %></h2>
-        </article>
+          <% userPost.forEach(user => { %>
+            <% if (user.id == oneProduct.userId) { %>
+               <article class="contactUser">
+                    <h3><%= user.phone %></h3>
+                    <h2><%= user.name %></h2>
+                  </article>
+            <% } %>
+          <% }) %>
+          
+       
       </section>
     </main>
     <%- include("./partials/footer") %>

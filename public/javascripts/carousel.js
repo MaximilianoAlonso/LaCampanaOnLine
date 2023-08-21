@@ -30,3 +30,11 @@ const swiper = new Swiper(".mySwiper", {
     }
     
   });
+
+
+  const verMas = document.querySelector(".verMas")
+  verMas.addEventListener("click", () => {
+    var postId = item.id
+    var url = "/posts/detail/" + postId;
+    window.location.href = url;
+  })
