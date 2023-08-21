@@ -11,7 +11,7 @@ module.exports = {
       const filterCategory = postsAll.filter(product => product.category == categoryFilt)
 
 
-      /* console.log(postsAll); */
+     console.log(postsAll); 
       res.render("posts", {
         title: "Publicaciones",
         post: postsAll,
@@ -27,6 +27,7 @@ module.exports = {
   detail: async (req,res) => {
     const {id} = req.params;
     try {
+      
       const oneProduct = await db.posts.findByPk(id,{
         include : [
           {
@@ -36,13 +37,12 @@ module.exports = {
         ]
       }
       )
-      const images = [oneProduct.imageOne, oneProduct.imageTwo, oneProduct.imageThree]
+      
  /*      res.send(oneProduct)  */
     res.render("detail", {
       title: "Detalles",
       oneProduct,
-      images,
-      user : oneProduct.user,
+      user : oneProduct.users,
       toThousand
     }) 
 

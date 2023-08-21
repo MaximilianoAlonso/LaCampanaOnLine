@@ -29,9 +29,10 @@
         >
           <div class="swiper-wrapper">
             <% post.forEach(item => { %>
+            
             <div class="swiper-slide">
-              <div class="swiper-zoom-container imgCarousel">
-                <img src="/images/Posts/<%= item.imageOne %>" />
+              <div class="swiper-zoom-container imgCarousel"><a href="/posts/detalle/<%= item.id %>">
+                <img src="/images/Posts/<%= item.imageOne %>" /></a>
                 <div class="textoCarousel">
                   <h4 class="tituloCarousel"><%= item.title %></h4>
                   <h4 class="precioCarousel">
@@ -51,9 +52,10 @@
 
     </main>
     <%- include("./partials/footer") %>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="/javascripts/carousel.js"></script>
 
-        <script src="/javascripts/carousel.js"></script>
     <%- include("./partials/scripts") %>
-
+    
   </body>
 </html>
