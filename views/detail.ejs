@@ -27,6 +27,7 @@
             </div>
           </div>
         </article>
+       
 
        <!-- Miniaturas de imágenes -->
 <div class="thumbnails">
@@ -60,13 +61,15 @@
                     <h5><b>Telefono: </b> <%= user.phone %></h5>
                     <h5>Enviale un Whatsapp!!</h5>
                     <a class="whatsApp" href="https://api.whatsapp.com/send/?phone=+54<%= user.phone %>"><i class="fa-brands fa-whatsapp"></i></a>
-                    
-                    
-
                   </article>
+                    <article>
+
+            <form class="delete" action="/posts/remove/<%= oneProduct.id %>?_method=DELETE" method="POST"><button type="submit">Eliminar Producto</button></form>
+     
+          </article>
             <% } %>
           <% }) %>
-          
+        
        
       </section>
     </main>

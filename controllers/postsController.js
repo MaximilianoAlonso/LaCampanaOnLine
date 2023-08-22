@@ -134,5 +134,18 @@ module.exports = {
     } catch (error) {
       console.log(error)
     }
+  },
+  deleteProduct: async (req,res) => {
+
+    const {id} = req.params;
+     try {
+      const oneProduct = await db.posts.findByPk(id);
+      oneProduct.destroy()
+
+      res.redirect("/posts")
+
+     } catch (error) {
+      console.log(error);
+     }
   }
 };

@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {allPosts, detail, createPost, savePost, userPosts} = require("../controllers/postsController")
+const {allPosts, detail, createPost, savePost, userPosts, deleteProduct} = require("../controllers/postsController")
 
 
 const {     uploadPostsImage
@@ -12,6 +12,7 @@ const postValidator = require("../validations/postValidator")
 router.get('/', allPosts)
 .get('/detalle/:id', detail)
 .get('/userPosts', checkUserGuest, userPosts)
+.delete("/remove/:id", deleteProduct)
 .get('/crear', checkUserGuest,  createPost)
 .post('/crear', uploadPostsImage, postValidator,  savePost)
 .get('/:category?', allPosts)
